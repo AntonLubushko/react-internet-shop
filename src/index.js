@@ -21,6 +21,7 @@ const store = createStore(playlists,applyMiddleware(thunk));
 
 render(
   <Provider store={store}>
+   
     <Router history={browserHistory} routes={routes} />
   </Provider>,
   document.getElementById('root')

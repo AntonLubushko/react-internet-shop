@@ -11,6 +11,7 @@ import NotFound from './components/NotFound'
 
 export const routes = (
   <div>
+    
     <Route path='/' component={App}>
       <IndexRoute component={Home} />
       <Route path='/admin' component={Admin} />
