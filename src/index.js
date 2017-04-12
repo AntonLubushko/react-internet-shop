@@ -7,6 +7,7 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import {render} from 'react-dom'
 
+
 function playlists(state = [], action){
     if(action.type === 'ADD_PLAYLIST'){
         return state;

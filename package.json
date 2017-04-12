@@ -23,6 +23,7 @@
   "homepage": "https://github.com/iamshaunjp/react-playlist#readme",
   "dependencies": {
     "install": "^0.8.8",
+    "material-ui": "^0.17.3",
     "npm": "^4.4.4",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
