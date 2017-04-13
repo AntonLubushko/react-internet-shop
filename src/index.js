@@ -32,10 +32,10 @@ xhr.send();
 // 4. Если код ответа сервера не 200, то это ошибка
 if (xhr.status != 200) {
   // обработать ошибку
-  alert( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
+  console.log( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
 } else {
   // вывести результат
-  alert( xhr.responseText ); // responseText -- текст ответа.
+  console.log( xhr.responseText ); // responseText -- текст ответа.
 }
 
 const store = createStore(playlists,applyMiddleware(thunk));
