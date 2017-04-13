@@ -1,25 +1,44 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import RaisedButton from 'material-ui/RaisedButton';
-import Menue from '../components/Menue'
+//import RaisedButton from 'material-ui/RaisedButton';
+import AppBar from 'material-ui/AppBar'
+import Drawer from 'material-ui/Drawer'
+import MenuItem from 'material-ui/MenuItem'
+import Avatar from 'material-ui/Avatar';
+import SvgIcon from 'material-ui/SvgIcon';
 
 export default class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      open: false
+    }
+  }
+
+  toggleDrawer() {this.setState({ open: !this.state.open });}
+  
   render() {
     return (
-      <MuiThemeProvider>
-      
-      <div className='container'>
-       <Menue/>
-        <div>
-          <ul className='nav nav-pills'>
-            <li><Link to='/admin'>Админка</Link></li>
-            <li><Link to='/list'>Список жанров</Link></li>
-          </ul>
-        {this.props.children}
+      <div>
+        <AppBar
+          iconElementLeft= {<img src='logo.png'  style={{width:50,height:50}}/>}
+          onLeftIconButtonTouchTap={this.toggleDrawer.bind(this)}
+        />
+        <Drawer
+          docked={false}
+          width={300}
+          onRequestChange={this.toggleDrawer.bind(this)}
+          open={this.state.open}
+        >
+          <MenuItem primaryText="list" containerElement={<Link to="/list" />} />
+          <MenuItem primaryText="admin" containerElement={<Link to="/admin" />} />
+        </Drawer>
+        <div >
+          {this.props.children}
+          
         </div>
-       </div>
-       </MuiThemeProvider>
+      </div>
+       
     )
   }
 }
