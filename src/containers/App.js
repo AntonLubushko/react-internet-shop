@@ -32,7 +32,7 @@ export default class App extends Component {
         >
           <MenuItem primaryText="Home" containerElement={<Link to="/" />} />
           <MenuItem primaryText="Goods" containerElement={<Link to="/list" />} />
-          <MenuItem primaryText="Add new item" containerElement={<Link to="/admin" />} />
+          <MenuItem primaryText="Add new item" containerElement={<Link to="/add-item" />} />
         </Drawer>
         <div >
           {this.props.children}

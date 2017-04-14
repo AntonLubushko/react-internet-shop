@@ -9,15 +9,16 @@ class List extends Component {
     super(props);
     
       console.log('Beginning of list goods');
-      let xhr = new XMLHttpRequest();
-      xhr.open('GET', '/items/items.json', false);
-      xhr.send();
-      if (xhr.status != 200) {
-        console.log( xhr.status + ': ' + xhr.statusText ); 
-      } else {
-        localStorage.goods = xhr.responseText;
+      if(localStorage.goods === undefined||localStorage.goods.length<1){
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', '/items/items.json', false);
+        xhr.send();
+        if (xhr.status != 200) {
+          console.log( xhr.status + ': ' + xhr.statusText ); 
+        } else {
+          localStorage.goods = xhr.responseText;
+        }
       }
-    
     this.state={
       displayedItems:localStorage.goods
     };
