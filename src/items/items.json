@@ -1,13 +1,15 @@
 [
     {
+        "id":1,
         "name":"Spoon",
         "img":"/items/img/spoon.jpg",
         "price":100,
         "description":"it is a very important thing"
     },
     {
+        "id":2,
         "name":"Fork",
-        "img":"/items/img/fork.jpg",
+        "img":"/items/img/fork.png",
         "price":200,
         "description":"it is a very dangerous thing"
     }

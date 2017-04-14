@@ -30,8 +30,9 @@ export default class App extends Component {
           onRequestChange={this.toggleDrawer.bind(this)}
           open={this.state.open}
         >
-          <MenuItem primaryText="list" containerElement={<Link to="/list" />} />
-          <MenuItem primaryText="admin" containerElement={<Link to="/admin" />} />
+          <MenuItem primaryText="Home" containerElement={<Link to="/" />} />
+          <MenuItem primaryText="Goods" containerElement={<Link to="/list" />} />
+          <MenuItem primaryText="Add new item" containerElement={<Link to="/admin" />} />
         </Drawer>
         <div >
           {this.props.children}

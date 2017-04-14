@@ -1,25 +1,14 @@
 {
-  "name": "react-playlist",
+  "name": "react-playlist-routing",
   "version": "1.0.0",
-  "description": "A simple react to-do list",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --content-base src/ --inline --hot --port 3001 --history-api-fallback",
     "build": "webpack -d"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iamshaunjp/react-playlist.git"
-  },
-  "keywords": [
-    "react"
-  ],
-  "author": "The Net Ninja",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/iamshaunjp/react-playlist/issues"
-  },
+      
   "homepage": "https://github.com/iamshaunjp/react-playlist#readme",
   "dependencies": {
     "material-ui": "^0.17.2",
