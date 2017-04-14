@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
+import {browserHistory } from 'react-router'
 
 export default class AddItemPage extends Component {
   render() {
@@ -6,6 +8,7 @@ export default class AddItemPage extends Component {
              <h1 style={{ textAlign: 'center' }}>
                You are now at AddItemPage PAGE 
              </h1>
+             
              <form className="form" onSubmit={this._onSubmit.bind(this)}>
                 <div >
                     <input
@@ -36,12 +39,20 @@ export default class AddItemPage extends Component {
                     </label>
                 </div >
                 <div className="form__submit-btn-wrapper">
-                            <button className="form__submit-btn" type="submit" style={{width:60,height:20}}>
-                                Submit
+                           
+                            <button className="form__submit-btn" type="submit" 
+                                    style={{width:60,height:20}} 
+                                    containerElement={<Link to="/list" />}
+                                    
+                                    >
+                              
+                              Submit
                             </button>
-                        
+                           
                 </div>
+                
             </form >
+            
             </div>
     )
   }
@@ -61,6 +72,9 @@ export default class AddItemPage extends Component {
     array.push(obj);
     localStorage.goods=JSON.stringify(array);
     console.log(array);
+    browserHistory.push('/list');
   }
-
+handleClick () {
+    browserHistory.push('/list');
+}
 }
