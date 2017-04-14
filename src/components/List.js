@@ -7,7 +7,6 @@ let localStorage = global.window.localStorage;
 class List extends Component {
   constructor(props){
     super(props);
-    
       console.log('Beginning of list goods');
       if(localStorage.goods === undefined||localStorage.goods.length<1){
         let xhr = new XMLHttpRequest();
@@ -17,6 +16,8 @@ class List extends Component {
           console.log( xhr.status + ': ' + xhr.statusText ); 
         } else {
           localStorage.goods = xhr.responseText;
+          let array = JSON.parse(localStorage.goods);
+          localStorage.max = Math.max(...array.map(elem =>elem.id));
         }
       }
     this.state={
@@ -25,12 +26,12 @@ class List extends Component {
   }
   
   deleteItem(id){
-    console.log(id);
+    console.log("deleted id "+id);
     let array = JSON.parse(this.state.displayedItems);
     this.setState({
       displayedItems : JSON.stringify(array.filter(elem => elem.id!==id))
     });
-    
+    localStorage.max = localStorage.max>=id?localStorage.max:id;
   }
   
   render() {

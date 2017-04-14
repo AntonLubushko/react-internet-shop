@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-//import RaisedButton from 'material-ui/RaisedButton';
 import AppBar from 'material-ui/AppBar'
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
 import Avatar from 'material-ui/Avatar';
 import SvgIcon from 'material-ui/SvgIcon';
+import Footer from '../components/Footer'
 
 export default class App extends Component {
   constructor(props) {
@@ -36,8 +36,8 @@ export default class App extends Component {
         </Drawer>
         <div >
           {this.props.children}
-          
         </div>
+      <Footer/>
       </div>
        
     )
