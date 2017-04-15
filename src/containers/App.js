@@ -21,7 +21,7 @@ export default class App extends Component {
     return (
       <div>
         <AppBar
-          iconElementLeft= {<img src='logo.png'  style={{width:50,height:50}}/>}
+          iconElementLeft= {<img src='/containers/logo.png'  style={{width:50,height:50}}/>}
           onLeftIconButtonTouchTap={this.toggleDrawer.bind(this)}
         />
         <Drawer
@@ -37,7 +37,10 @@ export default class App extends Component {
         <div >
           {this.props.children}
         </div>
-      <Footer/>
+        <div style={{ textAlign: 'center' }}>
+          <br/>
+          <Footer/>
+        </div>
       </div>
        
     )
