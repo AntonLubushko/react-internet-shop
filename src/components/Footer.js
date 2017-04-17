@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+import {connect} from 'react-redux'
 
-export default class Footer extends Component {
+class Footer extends Component {
   render() {
-    let goods = JSON.parse(global.window.localStorage.goods);
-    let count = goods.length;
-    let totalCost = goods.reduce((acc,item) => acc+Number(item.price),0);
-    let avg = (totalCost/count).toFixed(2);
+    let count = this.props.statistic[0];
+    let totalCost = this.props.statistic[1];
+    let avg = this.props.statistic[2];;
     return (
       <div className='container'>
-        <div className='row'>
-          <div className='col-md-12'>
+        <div >
+          <div >
             <div>
             <label>Count of all goods: </label>
             {count}
@@ -29,3 +29,8 @@ export default class Footer extends Component {
     )
   }
 }
+export default connect(
+ state => ({
+    statistic: state
+  })
+)(Footer);
