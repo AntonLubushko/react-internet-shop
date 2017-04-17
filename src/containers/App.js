@@ -3,8 +3,6 @@ import { Link } from 'react-router'
 import AppBar from 'material-ui/AppBar'
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
-import Avatar from 'material-ui/Avatar';
-import SvgIcon from 'material-ui/SvgIcon';
 import Footer from '../components/Footer'
 
 export default class App extends Component {
@@ -30,7 +28,6 @@ export default class App extends Component {
           onRequestChange={this.toggleDrawer.bind(this)}
           open={this.state.open}
         >
-          <MenuItem primaryText="Home" containerElement={<Link to="/" />} />
           <MenuItem primaryText="Goods" containerElement={<Link to="/list" />} />
           <MenuItem primaryText="Add new item" containerElement={<Link to="/add-item" />} />
         </Drawer>
