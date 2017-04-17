@@ -1,67 +1,17 @@
-import 'babel-polyfill'
-import React from 'react'
-import { Router, browserHistory } from 'react-router'
-import { routes } from './routes'
+import 'babel-polyfill';
+import React from 'react';
+import { Router, browserHistory } from 'react-router';
+import { routes } from './routes';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import {render} from 'react-dom'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import injectTapEventPlugin from 'react-tap-event-plugin'
+import {render} from 'react-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import reducer from './reducers/items';
 
 injectTapEventPlugin()
-
-let localStorage = global.window.localStorage;
-
-function populate(){
-  if(localStorage.goods === undefined||localStorage.goods.length<3){
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', '/items/items.json', false);
-    xhr.send();
-    if (xhr.status != 200) {
-      console.log( xhr.status + ': ' + xhr.statusText ); 
-    } else {
-      localStorage.goods = xhr.responseText;
-    }
-  }
-  let array = JSON.parse(localStorage.goods);
-  localStorage.max = Math.max(...array.map(elem =>elem.id));
-  let count = array.length;
-  let totalCost = array.reduce((total,elem) => total+Number(elem.price),0);
-  let avg = (totalCost/count).toFixed(2);
-  let state = {
-    statistic:[count,totalCost,avg],
-    role:"admin"
-  };
-  return state;
-}
-
-function calculate(){
-  let array = JSON.parse(localStorage.goods);
-  let count = array.length;
-  let totalCost = array.reduce((total,elem) => total+Number(elem.price),0);
-  let avg =(count !== 0)?(totalCost/count).toFixed(2):0;
-  return [count,totalCost,avg];
-}
-
-function playlists(state = populate(), action){
-    if(action.type === 'ADD_ITEM'){
-      let newState={};
-      newState.statistic=calculate();
-      newState.role=state.role;
-      return newState;
-    }else if (action.type === 'DELETE_ITEM') {
-      console.log('in delete controller');
-      let newState={};
-      newState.statistic=calculate();
-      newState.role=state.role;
-      console.log(newState);
-      return newState;
-     }
-    return state;
-}
-
-const store = createStore(playlists,applyMiddleware(thunk));
+const store = createStore(reducer,applyMiddleware(thunk));
 
 render(
   <MuiThemeProvider>

@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router'
-import {connect} from 'react-redux'
+import React, { Component } from 'react';
+import { Link } from 'react-router';
+import {connect} from 'react-redux';
 
 class Footer extends Component {
   render() {
@@ -12,16 +12,16 @@ class Footer extends Component {
         <div >
           <div >
             <div>
-            <label>Count of all goods: </label>
-            {count}
+              <label>Count of all goods: </label>
+              {count}
             </div>
             <div>
-            <label>Total price of all goods: </label>
-            {totalCost}
+              <label>Total price of all goods: </label>
+              {totalCost}
             </div>
             <div>
-            <label>Average price of all goods: </label>
-            {avg}
+              <label>Average price of all goods: </label>
+              {avg}
             </div>
           </div>
         </div>

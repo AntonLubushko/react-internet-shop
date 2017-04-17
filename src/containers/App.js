@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router'
-import AppBar from 'material-ui/AppBar'
-import Drawer from 'material-ui/Drawer'
-import MenuItem from 'material-ui/MenuItem'
-import Footer from '../components/Footer'
-import {connect} from 'react-redux'
+import React, { Component } from 'react';
+import { Link } from 'react-router';
+import AppBar from 'material-ui/AppBar';
+import Drawer from 'material-ui/Drawer';
+import MenuItem from 'material-ui/MenuItem';
+import Footer from '../components/Footer';
+import {connect} from 'react-redux';
 
 class App extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class App extends Component {
   toggleDrawer() {this.setState({ open: !this.state.open });}
   
   render() {
-    let menuItem = (this.props.store.role==="admin")?(<MenuItem primaryText="Add new item" containerElement={<Link to="/add-item" />} />):'';
+    let menuItem = (this.props.store.role==="admin")?(<MenuItem primaryText="Add new item" containerElement={<Link to="/add" />} />):'';
     return (
       <div>
         <AppBar
