@@ -5,6 +5,11 @@ import {connect} from 'react-redux'
 
 class AddItemPage extends Component {
   render() {
+    let role = this.props.store.role;
+    console.log("I see your role is ",role);
+    if(role !== "admin"){
+     browserHistory.push('/prohibited');
+    }
     return (
       <div style={{ align: 'center' }}>
               <h1 style={{ textAlign: 'center' }}>
@@ -85,7 +90,7 @@ class AddItemPage extends Component {
 }
 export default connect(
   state => ({
-
+    store:state
   }),
   dispatch => ({
     onAddItem:() =>{

@@ -23,7 +23,17 @@ class List extends Component {
   }
 
   render() {
-    //console.log(this.props.statistic);
+    console.log("You are now ",this.props.store.role);
+    let deleteAllButton = (this.props.store.role === "admin")?(<div >
+         <button 
+         style={{width:130,height:20}}
+         onClick={this.deleteAll.bind(this)}
+         >
+         Delete all items
+
+         </button>
+         </div>):'';
+    
     return (
       <div style={{ textAlign: 'center' }}>
         <div>
@@ -39,7 +49,10 @@ class List extends Component {
                   <p>
                   {obj.name}
                   <div >
-                    <img src="items/img/delete.png" onClick={this.deleteItem.bind(this,obj.id)} />
+                    {(this.props.store.role === "admin")?
+                    (<img src="items/img/delete.png" 
+                          onClick={this.deleteItem.bind(this,obj.id)} />):''
+                    }
                   </div>
                   </p>
                   <img src={obj.img} style={{width:80,height:80}} />
@@ -51,22 +64,14 @@ class List extends Component {
             )
          }
          </div>
-         <div >
-         <button 
-         style={{width:130,height:20}}
-         onClick={this.deleteAll.bind(this)}
-         >
-         Delete all items
-
-         </button>
-         </div>
+         {deleteAllButton}
          </div>
     )
   }
 }
 export default connect(
   state => ({
-    statistic:state
+    store:state
   }),
   dispatch => ({
     onDelete:() =>{

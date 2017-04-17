@@ -4,8 +4,9 @@ import AppBar from 'material-ui/AppBar'
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
 import Footer from '../components/Footer'
+import {connect} from 'react-redux'
 
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -16,6 +17,7 @@ export default class App extends Component {
   toggleDrawer() {this.setState({ open: !this.state.open });}
   
   render() {
+    let menuItem = (this.props.store.role==="admin")?(<MenuItem primaryText="Add new item" containerElement={<Link to="/add-item" />} />):'';
     return (
       <div>
         <AppBar
@@ -29,7 +31,7 @@ export default class App extends Component {
           open={this.state.open}
         >
           <MenuItem primaryText="Goods" containerElement={<Link to="/list" />} />
-          <MenuItem primaryText="Add new item" containerElement={<Link to="/add-item" />} />
+          {menuItem}
         </Drawer>
         <div >
           {this.props.children}
@@ -43,3 +45,8 @@ export default class App extends Component {
     )
   }
 }
+export default connect(
+state => ({
+    store:state
+  })
+  )(App);

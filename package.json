@@ -1,5 +1,5 @@
 {
-  "name": "react-playlist-routing",
+  "name": "react-internet-shop",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,8 +8,6 @@
     "start": "webpack-dev-server --content-base src/ --inline --hot --port 3001 --history-api-fallback",
     "build": "webpack -d"
   },
-      
-  "homepage": "https://github.com/iamshaunjp/react-playlist#readme",
   "dependencies": {
     "material-ui": "^0.17.2",
     "react": "^15.3.2",

@@ -12,6 +12,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()
 
 let localStorage = global.window.localStorage;
+
 function populate(){
   if(localStorage.goods === undefined||localStorage.goods.length<3){
     let xhr = new XMLHttpRequest();
@@ -28,7 +29,11 @@ function populate(){
   let count = array.length;
   let totalCost = array.reduce((total,elem) => total+Number(elem.price),0);
   let avg = (totalCost/count).toFixed(2);
-  return [count,totalCost,avg];
+  let state = {
+    statistic:[count,totalCost,avg],
+    role:"admin"
+  };
+  return state;
 }
 
 function calculate(){
@@ -41,10 +46,17 @@ function calculate(){
 
 function playlists(state = populate(), action){
     if(action.type === 'ADD_ITEM'){
-      return calculate();
+      let newState={};
+      newState.statistic=calculate();
+      newState.role=state.role;
+      return newState;
     }else if (action.type === 'DELETE_ITEM') {
-      
-      return calculate();
+      console.log('in delete controller');
+      let newState={};
+      newState.statistic=calculate();
+      newState.role=state.role;
+      console.log(newState);
+      return newState;
      }
     return state;
 }

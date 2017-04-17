@@ -4,9 +4,9 @@ import {connect} from 'react-redux'
 
 class Footer extends Component {
   render() {
-    let count = this.props.statistic[0];
-    let totalCost = this.props.statistic[1];
-    let avg = this.props.statistic[2];;
+    let count = this.props.store.statistic[0];
+    let totalCost = this.props.store.statistic[1];
+    let avg = this.props.store.statistic[2];;
     return (
       <div className='container'>
         <div >
@@ -31,6 +31,6 @@ class Footer extends Component {
 }
 export default connect(
  state => ({
-    statistic: state
+    store: state
   })
 )(Footer);
