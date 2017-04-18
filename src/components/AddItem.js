@@ -17,13 +17,13 @@ class AddItem extends Component {
     
     // If role is "admin" continue to render the component
     return (
-      <div style={{ align: 'center' }}>
+      <div style={{ textAlign: 'center' }}>
         <h1 style={{ textAlign: 'center' }}>
           Add another item here 
         </h1>
-        <div style={{ textAlign: 'center' }}>
+        <div>
           <form onSubmit={this.submit.bind(this)} >
-            <div style={{ align: 'center' }}>
+            <div style={{ position:"relative"}}>
               <input
                 type="text"
                 id="name"
@@ -36,7 +36,7 @@ class AddItem extends Component {
                   Name
               </label>
             </div >
-            <div style={{ align: 'center' }}>
+            <div style={{ position:"relative",right:3}}>
               <input
                 type="text"
                 id="price"
@@ -49,7 +49,7 @@ class AddItem extends Component {
                 Price
               </label>
             </div >
-            <div style={{ align: 'center'}}>
+            <div style={{ position:"relative",left:18}}>
               <input
                 type="text"
                 id="description"
