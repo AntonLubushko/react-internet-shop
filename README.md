@@ -1,5 +1,5 @@
 This application demonstraits a work of internet shop.
-If you set the role to "admin", you can add and delete items.
+If you set the role to "admin" in /reducers/items.js, you can add and delete items.
 If you set the role with another word, then you just can browes items in shop.
 
 First you should clone this repo 

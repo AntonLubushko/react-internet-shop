@@ -11,7 +11,7 @@ export default class NotFound extends Component {
       <div>
         <div>
           <div>
-            Ooops, page not found, back to <Link to='/list'>items</Link>
+            Ooops, page not found, back to <Link to='/list' style={{cursor:"pointer"}}>items</Link>
           </div>
         </div>
       </div>

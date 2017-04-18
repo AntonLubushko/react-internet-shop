@@ -27,7 +27,7 @@ class App extends Component {
     return (
       <div>
         <AppBar
-          iconElementLeft= {<img src='/containers/logo.png'  style={{width:50,height:50}}/>}
+          iconElementLeft= {<img src='/containers/logo.png'  style={{width:50,height:50,cursor:"pointer"}}/>}
           onLeftIconButtonTouchTap={this.toggleDrawer.bind(this)}
         />
         <Drawer

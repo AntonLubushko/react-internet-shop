@@ -12,7 +12,7 @@ export default class Prohibited extends Component {
       <div>
         <div>
           <div>
-            Ooops, you are not admin, back to <Link to='/list'>items</Link>?
+            Ooops, you are not admin, back to <Link to='/list' style={{cursor:"pointer"}}>items</Link>?
           </div>
         </div>
       </div>

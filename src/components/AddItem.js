@@ -65,7 +65,7 @@ class AddItem extends Component {
             <div >
               <button 
                 type="submit" 
-                style={{width:60,height:20}}>
+                style={{width:60,height:20,cursor:"pointer"}}>
                 Submit
               </button>
             </div>

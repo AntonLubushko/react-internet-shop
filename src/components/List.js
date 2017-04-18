@@ -32,6 +32,7 @@ class List extends Component {
          <button 
          style={{width:130,height:20}}
          onClick={this.deleteAll.bind(this)}
+         style={{cursor: "pointer"}}
          >
           Delete all items
          </button>
@@ -52,14 +53,16 @@ class List extends Component {
             <div key={i}>
               <div>
                 {obj.name}
-                <div>
-                  {(this.props.store.role === "admin")?
-                  (<img src="items/img/delete.png" 
-                        onClick={this.deleteItem.bind(this,obj.id)}/>):''
-                  }
-                </div>
-                <img src={obj.img} style={{width:80,height:80}} />
               </div>
+                {(this.props.store.role === "admin")?
+                  (<img src="items/img/delete.png" 
+                        onClick={this.deleteItem.bind(this,obj.id)}
+                        className="delete"
+                  />):''
+                }
+                <div>
+                  <img src={obj.img} style={{width:80,height:80}} />
+                </div>
               <div>
                 <p>{obj.description}</p>
               </div>  

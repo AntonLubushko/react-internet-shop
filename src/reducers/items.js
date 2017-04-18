@@ -55,7 +55,7 @@ function deleteItem(id){
 * Populates storage with items from file
 */
 function initState(){
-  if(LS.goods === undefined||LS.goods.length<3){
+  if(LS.goods === undefined){
     let xhr = new XMLHttpRequest();
     xhr.open('GET', '/items/items.json', false);
     xhr.send();
