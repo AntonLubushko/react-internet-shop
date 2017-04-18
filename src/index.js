@@ -1,3 +1,7 @@
+
+/**
+This is the entry file for the application
+*/
 import 'babel-polyfill';
 import React from 'react';
 import { Router, browserHistory } from 'react-router';
@@ -11,6 +15,8 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import reducer from './reducers/items';
 
 injectTapEventPlugin()
+
+// Redux-store
 const store = createStore(reducer,applyMiddleware(thunk));
 
 render(

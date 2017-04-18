@@ -1,3 +1,8 @@
+/**
+  Prohibited page appears when user with not "admin" role tries to go to /add page
+  route: /prohibited 
+*/
+
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 

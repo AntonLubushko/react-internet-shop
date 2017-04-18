@@ -1,3 +1,8 @@
+/**
+  App page is a container for all pages, it also contains header and footer
+  route: /
+*/
+
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import AppBar from 'material-ui/AppBar';
@@ -17,6 +22,7 @@ class App extends Component {
   toggleDrawer() {this.setState({ open: !this.state.open });}
   
   render() {
+    // If role of user in "admin" an item "Add new item" will be shown in menu
     let menuItem = (this.props.store.role==="admin")?(<MenuItem primaryText="Add new item" containerElement={<Link to="/add" />} />):'';
     return (
       <div>
