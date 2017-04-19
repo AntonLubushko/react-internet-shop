@@ -24,7 +24,7 @@ class Footer extends Component {
               {totalCost}
             </div>
             <div>
-              <label>Average price of all goods: </label>
+              <label>Average price of good: </label>
               {avg}
             </div>
           </div>

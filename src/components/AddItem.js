@@ -27,7 +27,7 @@ class AddItem extends Component {
               <input
                 type="text"
                 id="name"
-                placeholder="enter an item name"
+                placeholder="item name"
                 autoCorrect="off"
                 autoCapitalize="off"
                 spellCheck="false"
@@ -40,7 +40,7 @@ class AddItem extends Component {
               <input
                 type="text"
                 id="price"
-                placeholder="enter a price"
+                placeholder="price"
                 autoCorrect="off"
                 autoCapitalize="off"
                 spellCheck="false"
@@ -53,7 +53,7 @@ class AddItem extends Component {
               <input
                 type="text"
                 id="description"
-                placeholder="your text, bro"
+                placeholder="description"
                 autoCorrect="off"
                 autoCapitalize="off"
                 spellCheck="false"
