@@ -52,14 +52,15 @@ class List extends Component {
           JSON.parse(LS.goods).map((obj,i) => 
             <div key={i}>
               <div>
-                {obj.name}
-              </div>
+                {obj.name+" "}
+              
                 {(this.props.store.role === "admin")?
                   (<img src="items/img/delete.png" 
                         onClick={this.deleteItem.bind(this,obj.id)}
                         className="delete"
                   />):''
                 }
+                </div>
                 <div>
                   <img src={obj.img} style={{width:80,height:80}} />
                 </div>
