@@ -3,9 +3,9 @@ If you set the role to "admin" in /reducers/items.js, you can add and delete ite
 If you set the role with another word, then you just can browes items in shop.
 
 First you should clone this repo 
- git clone https://github.com/AntonLubushko/react-internet-shop.git
+ git clone https://github.com/AntonLubushko/react-internet-shop.git .
 Then install node-modules
- npm install
+ NPM INSTALL .
 Then start application 
- npm start
+ NPM START .
 The app will start at localhost:3000
