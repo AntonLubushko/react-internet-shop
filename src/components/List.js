@@ -5,9 +5,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import {connect} from 'react-redux';
+import {GridList, GridTile} from 'material-ui/GridList';
 
 // Data storage
 const LS = window.localStorage;
+
+// Styles of grid
+const styles = {
+  
+  
+};
 
 class List extends Component {
   /**
@@ -28,51 +35,49 @@ class List extends Component {
     // If the role is "admin" this delete button will be existed 
     // and admin can delete all items in one time
     let deleteAllButton = (this.props.store.role === "admin")?
-      (<div>
-         <button 
-         style={{width:130,height:20}}
-         onClick={this.deleteAll.bind(this)}
-         style={{cursor: "pointer"}}
-         >
-          Delete all items
+      (<button 
+          className="del-btn"
+          onClick={this.deleteAll.bind(this)}
+        >
+          <b>Delete all items</b>
          </button>
-      </div>):'';
+      ):'';
     return (
-      <div style={{ textAlign: 'center' }}>
-        <div>
-          <div>
-            <h1> List of goods </h1>
-          </div>
-        </div>
       <div>
-       {
-          // Show all items in storage
-          // If role is "admin" cross-image will be shown 
-          // and admin can delete an item
-          JSON.parse(LS.goods).map((obj,i) => 
-            <div key={i}>
-              <div>
-                {obj.name+" "}
-              
-                {(this.props.store.role === "admin")?
-                  (<img src="items/img/delete.png" 
-                        onClick={this.deleteItem.bind(this,obj.id)}
-                        className="delete"
-                  />):''
-                }
-                </div>
-                <div>
-                  <img src={obj.img} style={{width:80,height:80}} />
-                </div>
-              <div>
-                <p>{obj.description}</p>
-              </div>  
-            </div>
-          )
-       }
-         </div>
+        <h1 className="center-header"> List of goods </h1>
+        {// Show all items in storage
+        // If role is "admin" cross-image will be shown 
+        // and admin can delete an item
+        }
+        <div className="root">
+          <GridList className="gridList" cellHeight={180}>
+            {JSON.parse(LS.goods).map((item,index) => 
+              <GridTile key={index} 
+                        title={item.name} 
+                        subtitle={
+                          <span>
+                            {item.description}
+                          </span>
+                        }
+                        actionIcon={
+                          (this.props.store.role === "admin")?
+                          (<img 
+                            className="delete-cross"
+                            src="items/img/close.png" 
+                            onClick={this.deleteItem.bind(this,item.id)}
+                           />
+                          ):null
+                        }
+              >
+                <img src={item.img}/>
+              </GridTile>
+            )}
+          </GridList>
+        </div>  
+        <div className="center-delAll-btn">      
           {deleteAllButton}
-         </div>
+        </div>
+      </div>     
     )
   }
 }

@@ -23,7 +23,7 @@ class AddItem extends Component {
         </h1>
         <div>
           <form onSubmit={this.submit.bind(this)} >
-            <div style={{ position:"relative"}}>
+            <div style={{position:"relative"}}>
               <input
                 type="text"
                 id="name"
@@ -36,7 +36,7 @@ class AddItem extends Component {
                   Name
               </label>
             </div >
-            <div style={{ position:"relative",right:3}}>
+            <div style={{position:"relative",right:3}}>
               <input
                 type="text"
                 id="price"
@@ -49,7 +49,7 @@ class AddItem extends Component {
                 Price
               </label>
             </div >
-            <div style={{ position:"relative",left:18}}>
+            <div style={{position:"relative",left:18}}>
               <input
                 type="text"
                 id="description"
@@ -62,10 +62,8 @@ class AddItem extends Component {
                 Description
               </label>
             </div >
-            <div >
-              <button 
-                type="submit" 
-                style={{width:60,height:20,cursor:"pointer"}}>
+            <div style={{marginTop:2, marginRight:147}}>
+              <button className="sbmt-btn">
                 Submit
               </button>
             </div>

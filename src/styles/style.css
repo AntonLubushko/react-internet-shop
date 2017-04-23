@@ -1,0 +1,52 @@
+.delete-cross{
+	color:#fff;
+  cursor: pointer;
+  position:relative;
+  width: 15px;
+  height: 15px;
+  right: 3px;
+  bottom: 132px;
+  opacity:0.5; 
+}
+.delete-cross:hover{
+    opacity:1;
+}
+.center-header{
+	text-align: center;
+}
+
+.center-delAll-btn{
+	text-align: center;
+	margin: 12px;
+}
+.del-btn{
+	width:130px;
+	height:30px;
+	cursor: pointer;
+	background-color: rgb(212, 161, 89);
+	color:rgb(60, 12, 7);
+	border-color: #fff;
+	border-radius: 7px;
+}
+
+.sbmt-btn{
+  width:70px;
+  height:30px;
+  cursor: pointer;
+  background-color: rgb(212, 161, 89);
+  color:rgb(60, 12, 7);
+  border-color: #fff;
+  border-radius: 5px;
+}
+
+.gridList {
+    width: 500px;
+    height: 300px;
+    overflow-y: auto;
+  }
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
